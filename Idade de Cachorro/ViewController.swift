@@ -9,7 +9,21 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var tfIdadeCachorro: UITextField!
+    
+    @IBOutlet weak var lbResult: UILabel!
+    
+    @IBAction func btResult(_ sender: UIButton) {
+        
+        
+        let idade  =  Int(tfIdadeCachorro.text!)! * 7
+        lbResult.isHidden = false
+        lbResult.text = "A idade do cachorro é: \(idade)"
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

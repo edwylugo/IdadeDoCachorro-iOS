@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,91 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Idade_de_Cachorro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cachorro" translatesAutoresizingMaskIntoConstraints="NO" id="fh6-DL-hFv">
+                                <rect key="frame" x="0.0" y="8" width="375" height="194"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="194" id="Jm6-sd-YuP"/>
+                                    <constraint firstAttribute="width" constant="375" id="b8T-fZ-N99"/>
+                                </constraints>
+                            </imageView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpB-D6-y7O">
+                                <rect key="frame" x="8" y="210" width="359" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Digite a idade do seu cachorro, para descobrir a idade em anos humanos." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F2h-xK-6F6">
+                                        <rect key="frame" x="8" y="8" width="343" height="54"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="F2h-xK-6F6" secondAttribute="bottom" constant="8" id="6xg-Fk-JuT"/>
+                                    <constraint firstItem="F2h-xK-6F6" firstAttribute="leading" secondItem="hpB-D6-y7O" secondAttribute="leading" constant="8" id="bnn-J6-0uY"/>
+                                    <constraint firstAttribute="trailing" secondItem="F2h-xK-6F6" secondAttribute="trailing" constant="8" id="cv0-So-piJ"/>
+                                    <constraint firstAttribute="height" constant="70" id="gRL-cM-ug3"/>
+                                    <constraint firstItem="F2h-xK-6F6" firstAttribute="top" secondItem="hpB-D6-y7O" secondAttribute="top" constant="8" id="ixx-LU-T74"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite a idade do cachorro" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LU7-GA-ud2">
+                                <rect key="frame" x="97.5" y="288" width="181" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="BJq-Zm-zdR"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ea-Au-AUE">
+                                <rect key="frame" x="125" y="346" width="125" height="30"/>
+                                <state key="normal" title="Descobrir a idade "/>
+                                <connections>
+                                    <action selector="btResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eM8-0g-uap"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A idade do cachorro é:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZx-Ft-oBD">
+                                <rect key="frame" x="101.5" y="395" width="173" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="colorLightBlue"/>
+                        <constraints>
+                            <constraint firstItem="LU7-GA-ud2" firstAttribute="top" secondItem="hpB-D6-y7O" secondAttribute="bottom" constant="8" id="7ls-hi-lLc"/>
+                            <constraint firstItem="7ea-Au-AUE" firstAttribute="centerX" secondItem="gZx-Ft-oBD" secondAttribute="centerX" id="8At-Ig-kiM"/>
+                            <constraint firstItem="gZx-Ft-oBD" firstAttribute="top" secondItem="7ea-Au-AUE" secondAttribute="bottom" constant="19" id="BeB-4I-066"/>
+                            <constraint firstAttribute="trailing" secondItem="hpB-D6-y7O" secondAttribute="trailing" constant="8" id="C1d-11-aby"/>
+                            <constraint firstItem="7ea-Au-AUE" firstAttribute="top" secondItem="LU7-GA-ud2" secondAttribute="bottom" constant="14" id="Cvd-ry-CGd"/>
+                            <constraint firstItem="fh6-DL-hFv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KJW-Ca-Bui"/>
+                            <constraint firstItem="hpB-D6-y7O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="8" id="Lbb-Ql-WWD"/>
+                            <constraint firstItem="fh6-DL-hFv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SHb-jE-kzb"/>
+                            <constraint firstItem="fh6-DL-hFv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="8" id="X9Q-lH-PbN"/>
+                            <constraint firstItem="LU7-GA-ud2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hga-dE-vDU"/>
+                            <constraint firstItem="gZx-Ft-oBD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lQZ-Ur-ODs"/>
+                            <constraint firstItem="hpB-D6-y7O" firstAttribute="top" secondItem="fh6-DL-hFv" secondAttribute="bottom" constant="8" id="ys2-Yg-cRG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lbResult" destination="gZx-Ft-oBD" id="773-jO-8Lu"/>
+                        <outlet property="tfIdadeCachorro" destination="LU7-GA-ud2" id="8d1-gd-oOP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cachorro" width="421" height="404"/>
+        <namedColor name="colorLightBlue">
+            <color red="0.17299999299999999" green="0.76499998570000005" blue="0.92199999089999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
